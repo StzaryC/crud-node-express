@@ -49,10 +49,7 @@ app.delete('/api/:id', (req, res)=>{
     })
 })
 
-app.get("/index.html", (req, res)=>{
-    app.use(express.static(__filename + 'index.html'))
-    
-})
+
 
 
    
