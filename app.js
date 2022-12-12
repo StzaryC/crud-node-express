@@ -3,16 +3,20 @@ const mysql = require("mysql")
 
 const app = express();
 const port = process.env.MYSQLPORT || 6217
+const MYSQLHOST = process.env.MYSQLHOST
+const MYSQLDATABASE = process.env.MYSQLDATABASE
+const MYSQLUSER = process.env.MYSQLUSER
+const MYSQLPASSWORD = process.env.MYSQLPASSWORD
 
 app.listen(port, ()=>{
     console.log("api works server listenning at localhost: " + port);
 })
 
 const connection = mysql.createConnection({
-    host: process.env.MYSQLHOST,
-    database: process.env.MYSQLDATABASE,
-    user: process.env.MYSQLUSER,
-    password: process.env.MYSQLPASSWORD,
+    host: MYSQLHOST,
+    database: MYSQLDATABASE,
+    user: MYSQLUSER,
+    password: MYSQLPASSWORD,
 })
 connection.connect((err)=>{
     if(err){
