@@ -10,7 +10,12 @@ const MYSQLPASSWORD = process.env.MYSQLPASSWORD
 
 app.listen(port, ()=>{
     console.log("api works server listenning at localhost: " + port);
-    console.log(MYSQLHOST,MYSQLDATABASE,MYSQLUSER,MYSQLPASSWORD);
+    console.log(
+        "host: "MYSQLHOST,
+        "database: "MYSQLDATABASE,
+        "user: "MYSQLUSER,
+        "password: "MYSQLPASSWORD
+    );
     
 })
 
@@ -21,16 +26,14 @@ const connection = mysql.createConnection({
     password: MYSQLPASSWORD,
 })
 
-connection.connect();
-
-/*connection.connect((error)=>{
+connection.connect((error)=>{
     if(error){
         throw error
     } else {
         console.log("DB Connected");
     }
 })
-*/
+
 
 app.get('/', (req, res) => {
     connection.query("SELECT * FROM users" , (err, rows)=>{
