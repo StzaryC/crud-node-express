@@ -20,13 +20,18 @@ const connection = mysql.createConnection({
     user: MYSQLUSER,
     password: MYSQLPASSWORD,
 })
-connection.connect((error)=>{
+
+connection.connect();
+
+/*connection.connect((error)=>{
     if(error){
         throw error
     } else {
         console.log("DB Connected");
     }
 })
+*/
+
 app.get('/', (req, res) => {
     connection.query("SELECT * FROM users" , (err, rows)=>{
         console.log(rows)
