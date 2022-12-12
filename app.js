@@ -10,6 +10,8 @@ const MYSQLPASSWORD = process.env.MYSQLPASSWORD
 
 app.listen(port, ()=>{
     console.log("api works server listenning at localhost: " + port);
+    console.log(MYSQLHOST,MYSQLDATABASE,MYSQLUSER,MYSQLUSER,MYSQLPASSWORD);
+    
 })
 
 const connection = mysql.createConnection({
