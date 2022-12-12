@@ -21,7 +21,7 @@ const connection = mysql.createConnection({
     password: MYSQLPASSWORD,
 })
 connection.connect((error)=>{
-    if(error{
+    if(error){
         throw error
     } else {
         console.log("DB Connected");
