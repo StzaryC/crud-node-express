@@ -21,7 +21,7 @@ connection.connect((err)=>{
         console.log("DB Connected");
     }
 })
-app.get('/api', (req, res) => {
+app.get('/', (req, res) => {
     connection.query("SELECT * FROM users" , (err, rows)=>{
         console.log(rows)
         res.send(rows)
