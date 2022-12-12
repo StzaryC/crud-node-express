@@ -2,17 +2,17 @@ const express = require("express")
 const mysql = require("mysql")
 
 const app = express();
-const port = 6217
+const port = process.env.PORT || 6217
 
-app.listen(port || 0, ()=>{
+app.listen(port, ()=>{
     console.log("api works server listenning at localhost: " + port);
 })
 
 const connection = mysql.createConnection({
-    host: "containers-us-west-131.railway.app",
-    database: "railway",
-    user: "root",
-    password: "wSCEWSGQ4NKHmfwusR6N",
+    host: process.env.HOST,
+    database: process.env.DATABASE,
+    user: process.env.USER,
+    password: PROCES.env.PASSWORD,
 })
 connection.connect((err)=>{
     if(err){
