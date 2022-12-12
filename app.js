@@ -9,10 +9,10 @@ app.listen(port, ()=>{
 })
 
 const connection = mysql.createConnection({
-    host: process.env.MYSQLHOST,
-    database: process.env.MYSQLDATABASE,
-    user: process.env.MYSQLUSER,
-    password: process.env.MYSQLPASSWORD,
+    host: "containers-us-west-160.railway.app",
+    database: "railway",
+    user: "root",
+    password: "paFNtJaYyN2ZjWh9ZIP4",
 })
 connection.connect((err)=>{
     if(err){
